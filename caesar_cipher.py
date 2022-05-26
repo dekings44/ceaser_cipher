@@ -1,6 +1,8 @@
 
 
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 
+'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+'a', 'b', 'c', 'd', 'e', 'f', 'g', 
 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ]
 
@@ -21,4 +23,20 @@ def encrypt(word, shift_number):
         
     print(f"The encode text is {cipher_text}")
 
-encrypt(word=text, shift_number=shift)
+
+
+def decrypt(cipher_text, shift_number):
+    plain_text = ""
+    for letter in cipher_text:
+        position = letters.index(letter)
+        new_position = position - shift_number
+        plain_text += letters[new_position]
+
+    print(f"The decoded text is {plain_text}")
+
+
+
+if direction == "encode":
+    encrypt(word=text, shift_number=shift)
+elif direction == "decode":
+    decrypt(cipher_text = text, shift_number = shift)
