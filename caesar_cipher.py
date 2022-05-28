@@ -63,6 +63,7 @@ while to_continue:
     shift = shift % 26
     caeser(start_text = text, shift_number = shift, cipher_direction = direction)
 
+    print('Will you like to continue playing Caesar Cipher?\n\n')
     try_again = input("Type 'yes' if you want to go again, otherwise type 'no'.\n")
     if try_again == 'no':
         print('Goodbye')
