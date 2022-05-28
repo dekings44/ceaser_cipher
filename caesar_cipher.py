@@ -6,12 +6,6 @@ from alphabet import letters
 print(f'Welcome to\n\n {art.logo}')
 
 
-direction = input("Type 'encode' to encrypt, Type decode to decrypt\n")
-
-text = input('Type your message:\n').lower()
-
-shift = int(input("Type the number of place your want to shift your text:\n"))
-
 
 # def encrypt(word, shift_number):
 #     cipher_text = ''
@@ -41,7 +35,6 @@ shift = int(input("Type the number of place your want to shift your text:\n"))
 # elif direction == "decode":
 #     decrypt(cipher_text = text, shift_number = shift)
 
-shift = shift % 26
 
 
 
@@ -58,4 +51,20 @@ def caeser(start_text, shift_number, cipher_direction):
             end_text += letter
     print(f"The {cipher_direction}d text is {end_text}")
 
-caeser(start_text = text, shift_number = shift, cipher_direction = direction)
+
+
+to_continue = True
+while to_continue:
+    direction = input("Type 'encode' to encrypt, Type decode to decrypt\n")
+
+    text = input('Type your message:\n').lower()
+
+    shift = int(input("Type the number of place your want to shift your text:\n"))
+    shift = shift % 26
+    caeser(start_text = text, shift_number = shift, cipher_direction = direction)
+
+    try_again = input("Type 'yes' if you want to go again, otherwise type 'no'.\n")
+    if try_again == 'no':
+        print('Goodbye')
+        to_continue = False
+        
