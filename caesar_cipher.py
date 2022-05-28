@@ -1,10 +1,10 @@
 
 
-letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 
-'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-'a', 'b', 'c', 'd', 'e', 'f', 'g', 
-'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-]
+import art
+from alphabet import letters
+
+print(f'Welcome to\n\n {art.logo}')
+
 
 direction = input("Type 'encode' to encrypt, Type decode to decrypt\n")
 
