@@ -41,15 +41,21 @@ shift = int(input("Type the number of place your want to shift your text:\n"))
 # elif direction == "decode":
 #     decrypt(cipher_text = text, shift_number = shift)
 
+shift = shift % 26
+
+
 
 def caeser(start_text, shift_number, cipher_direction):
     end_text = ""
     if cipher_direction == 'decode':
             shift_number *= -1
     for letter in start_text:
-        position = letters.index(letter)
-        new_position = position + shift_number
-        end_text += letters[new_position]
+        if letter in letters:
+            position = letters.index(letter)
+            new_position = position + shift_number
+            end_text += letters[new_position]
+        else:
+            end_text += letter
     print(f"The {cipher_direction}d text is {end_text}")
 
 caeser(start_text = text, shift_number = shift, cipher_direction = direction)
